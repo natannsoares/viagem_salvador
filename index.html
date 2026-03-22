@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Viagem: Salvador 2025</title>
+    <style>
+        :root {
+            --primary: #005f73;
+            --secondary: #94d2bd;
+            --accent: #ee9b00;
+            --bg: #f8f9fa;
+            --text: #2b2d42;
+            --white: #ffffff;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0; padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            /* MANTIDO: Link do cabeçalho que você enviou */
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://guiaviajarmelhor.com.br/wp-content/uploads/2023/11/lugares-para-ir-em-salvador.jpeg') center/cover;
+            color: white; text-align: center; padding: 60px 20px;
+        }
+        .container { max-width: 900px; margin: -40px auto 40px; padding: 0 20px; }
+        .tabs {
+            display: flex; justify-content: center; gap: 8px;
+            margin-bottom: 25px; flex-wrap: wrap;
+        }
+        .tab-btn {
+            padding: 12px 25px; border: none; background: var(--white);
+            color: var(--primary); cursor: pointer; border-radius: 30px;
+            font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .tab-btn.active { background: var(--accent); color: white; }
+        
+        .card {
+            background: var(--white); border-radius: 15px;
+            padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            display: none; animation: slideUp 0.4s ease-out;
+        }
+        .card.active { display: block; }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .timeline { border-left: 3px solid var(--secondary); margin-left: 20px; padding-left: 30px; margin-bottom: 30px;}
+        .item { position: relative; margin-bottom: 25px; }
+        .item::before {
+            content: ''; position: absolute; left: -38px; top: 5px;
+            width: 12px; height: 12px; background: var(--accent);
+            border: 3px solid var(--white); border-radius: 50%;
+        }
+        .time { font-weight: bold; color: var(--primary); display: block; font-size: 0.9em; }
+        .desc { font-size: 1.1em; font-weight: 500; }
+        .sub-items { font-size: 0.9em; color: #666; margin-top: 5px; }
+
+        .gallery {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px; margin-top: 10px;
+        }
+        .gallery-item {
+            position: relative; overflow: hidden; border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .gallery img { 
+            width: 100%; height: 200px; object-fit: cover; 
+            transition: 0.4s; display: block;
+        }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .img-caption {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white; padding: 10px; font-size: 0.9em;
+            font-weight: bold; text-align: center;
+        }
+        h3.gallery-title { color: var(--primary); border-bottom: 2px solid var(--secondary); padding-bottom: 5px; margin-top: 30px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Salvador: Bahia de Todos os Santos</h1>
+    <p>Roteiro de Viagem | Abril 2025</p>
+</header>
+
+<div class="container">
+    <div class="tabs">
+        <button class="tab-btn active" onclick="showDay('d1', this)">02/04 Qui</button>
+        <button class="tab-btn" onclick="showDay('d2', this)">03/04 Sex</button>
+        <button class="tab-btn" onclick="showDay('d3', this)">04/04 Sáb</button>
+        <button class="tab-btn" onclick="showDay('d4', this)">05/04 Dom</button>
+    </div>
+
+    <div id="d1" class="card active">
+        <h2>Chegada e Primeiro Mergulho na Barra</h2>
+        <div class="timeline">
+            <div class="item"><span class="time">00:01</span><span class="desc">Saída Jaguariaíva a Curitiba</span></div>
+            <div class="item"><span class="time">05:30</span><span class="desc">Aeroporto Curitiba</span></div>
+            <div class="item"><span class="time">11:50</span><span class="desc">Aeroporto Salvador</span></div>
+            <div class="item"><span class="time">13:30</span><span class="desc">Chegada Airbnb</span></div>
+            <div class="item"><span class="time">14:30</span><span class="desc">Check In Airbnb</span></div>
+            <div class="item"><span class="time">15:00</span><span class="desc">Praia Farol</span></div>
+            <div class="item"><span class="time">19:00</span><span class="desc">Barzinho</span></div>
+        </div>
+        
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://viagemeturismo.abril.com.br/wp-content/uploads/2025/02/Praia_Farol_da_Barra_Salvador.jpg?crop=1&resize=1212,909" alt="Praia do Farol">
+                <div class="img-caption">Praia do Farol da Barra</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/75/3c/f9/caption.jpg?w=900&h=500&s=1" alt="Farol da Barra">
+                <div class="img-caption">Farol da Barra</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="d2" class="card">
+        <h2>Fé, História e Cultura Baiana</h2>
+        <div class="timeline">
+            <div class="item"><span class="time">07:30</span><span class="desc">Acordar</span></div>
+            <div class="item"><span class="time">09:00</span><span class="desc">Saída</span></div>
+            <div class="item"><span class="time">09:30</span><span class="desc">Igreja Bonfim</span></div>
+            <div class="item">
+                <span class="time">10:30</span><span class="desc">Centro Histórico - Pelourinho</span>
+                <div class="sub-items">
+                    Igreja São Francisco<br>
+                    Fundação Casa de Jorge Amado<br>
+                    Museu da Misericórdia<br>
+                    Clipe - Michael Jackson
+                </div>
+            </div>
+            <div class="item"><span class="time">12:30</span><span class="desc">Almoço - Museu da Gastronomia Baiana ( SENAC )</span></div>
+            <div class="item">
+                <span class="time">13:30</span><span class="desc">Parte Baixa</span>
+                <div class="sub-items">
+                    Casa do Carnaval da Bahia<br>
+                    Praça da Sé<br>
+                    Elevador Lacerda<br>
+                    Museu da música<br>
+                    Mercado Modelo<br>
+                    Farol da barra
+                </div>
+            </div>
+        </div>
+
+        <h3 class="gallery-title">Galeria de Sexta</h3>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://viajecomnorma.com.br/wp-content/uploads/2021/01/Igreja-do-Bonfim-local-de-fe-em-Salvador.jpeg" alt="Igreja do Bonfim">
+                <div class="img-caption">Igreja do Bonfim</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.mnstatic.com/fd/a9/fda9395bf062fa41e343d9da37345af0.jpg?quality=75&format=png&fit=crop&width=980&height=880&aspect_ratio=980%3A880" alt="Igreja São Francisco">
+                <div class="img-caption">Igreja São Francisco</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://f.i.uol.com.br/fotografia/2024/12/11/17339320846759b4342b394_1733932084_3x2_rt.jpg" alt="Jorge Amado">
+                <div class="img-caption">Fundação Jorge Amado</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStk0lNHkKI2tBnRDPefDgPx8BK6GQILPvEuA&s" alt="Museu da Misericórdia">
+                <div class="img-caption">Museu da Misericórdia</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoqLedbhlmcKnm3BK-bHg7fxsR_CycLrHZgA&s" alt="Escadaria Michael">
+                <div class="img-caption">Escadaria Michael Jackson</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://lirp.cdn-website.com/33a35e36/dms3rep/multi/opt/casa-do-carnaval-da-bahia+%284%29-640w.jpg" alt="Casa do Carnaval">
+                <div class="img-caption">Casa do Carnaval</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://mobilidade.estadao.com.br/wp-content/uploads/2024/12/Imagem-destacada-Mobilidade-2024-12-09T165847.906.jpg.webp" alt="Elevador Lacerda">
+                <div class="img-caption">Elevador Lacerda</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://roteiroculturalssa.com.br/wp-content/uploads/2024/04/162560131260e4b52099797_1625601312_3x2_xl.jpg" alt="Cidade da Música">
+                <div class="img-caption">Cidade da Música</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://static.wixstatic.com/media/954288_cc43dd82cb1c4589ba449e574370980f~mv2.jpg/v1/fill/w_500,h_281,al_c,q_80,enc_auto/954288_cc43dd82cb1c4589ba449e574370980f~mv2.jpg" alt="Mercado Modelo">
+                <div class="img-caption">Mercado Modelo</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="d3" class="card">
+        <h2>Dia de Praia e Lazer na Barra</h2>
+        <div class="timeline">
+            <div class="item"><span class="time">09:00</span><span class="desc">Café da manhã</span></div>
+            <div class="item"><span class="time">10:30</span><span class="desc">Passar o dia na Praia do Farol</span></div>
+            <div class="item"><span class="time">17:30</span><span class="desc">Pôr do Sol</span></div>
+            <div class="item"><span class="time">19:30</span><span class="desc">Lazer Noturno</span></div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://badevalor.com.br/wp-content/uploads/2019/12/Barra_Foto-Max-Haack_Secom-PMS-64.jpg" alt="Pôr do Sol no Farol">
+                <div class="img-caption">Pôr do Sol no Farol da Barra</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="d4" class="card">
+        <h2>Retorno para Casa</h2>
+        <div class="timeline">
+            <div class="item"><span class="time">03:00</span><span class="desc">Saída Airbnb</span></div>
+            <div class="item"><span class="time">05:20</span><span class="desc">Voo Salvador a Curitiba</span></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showDay(id, btn) {
+        document.querySelectorAll('.card').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        btn.classList.add('active');
+    }
+</script>
+
+</body>
+</html>
